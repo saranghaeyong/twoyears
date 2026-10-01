@@ -1,0 +1,6 @@
+{
+  "name": "TWO YEARS - An Interactive Animated Story",
+  "description": "An interactive cinematic memory experience about two postgraduate years, unspoken feelings, and moving forward.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

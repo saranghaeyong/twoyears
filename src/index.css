@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0c0d12;
+    color: #e5e5ea;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    touch-action: manipulation;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-cinematic {
+  font-family: var(--font-serif);
+}
+
+/* Cinematic film grain & vignette */
+.vignette-overlay {
+  background: radial-gradient(circle at center, transparent 40%, rgba(5, 6, 10, 0.6) 85%, rgba(4, 5, 8, 0.95) 100%);
+  pointer-events: none;
+}
+
+.memory-sepia {
+  filter: sepia(0.2) contrast(1.05) brightness(0.95);
+}
+
+.nostalgia-glow {
+  filter: saturate(0.9) contrast(1.02);
+}
+
+/* Animations */
+@keyframes slowDrift {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-4px) translateX(3px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+.animate-drift {
+  animation: slowDrift 6s ease-in-out infinite;
+}
+
+@keyframes fanRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-fan {
+  animation: fanRotate 0.8s linear infinite;
+}
+
+@keyframes curtainSway {
+  0%, 100% { transform: skewX(0deg) scaleX(1); }
+  50% { transform: skewX(-2deg) scaleX(1.03); }
+}
+
+.animate-curtain {
+  animation: curtainSway 5s ease-in-out infinite;
+}
+
+@keyframes rainFall {
+  0% { transform: translateY(-100px); opacity: 0; }
+  50% { opacity: 0.7; }
+  100% { transform: translateY(600px); opacity: 0.1; }
+}
+
+/* Custom scrollbars hidden for cinematic feel */
+::-webkit-scrollbar {
+  display: none;
+}
